@@ -23,17 +23,14 @@ public class Main {
         escalonador.adicionarProcesso(GeradorDeProcesso.gerarProcesso());
         escalonador.adicionarProcesso(GeradorDeProcesso.gerarProcesso());
 
-        // Muda algoritmo para FCFS
         escalonador.setAlgoritmo("FCFS");
         System.out.println("=== Executando FCFS ===");
         cpu.executar();
 
-        // Reinicia processos novamente
         escalonador.adicionarProcesso(GeradorDeProcesso.gerarProcesso());
         escalonador.adicionarProcesso(GeradorDeProcesso.gerarProcesso());
         escalonador.adicionarProcesso(GeradorDeProcesso.gerarProcesso());
 
-        // Muda algoritmo para SJF
         escalonador.setAlgoritmo("SJF");
         System.out.println("=== Executando SJF ===");
         cpu.executar();
