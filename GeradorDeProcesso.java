@@ -1,25 +1,12 @@
-public class GeradorDeProcesso{
-    private int id;
-    private int quantidadeInstrucoes;
-}
+import java.util.Random;
 
+public class GeradorDeProcesso {
+    private static int contadorId = 0;
+    private static Random gerador = new Random();
 
-public int getId(){
-    return id;
-}
-
-public int getQuantidadeInstrucoes(){
-    return quantidadeInstrucoes;
-}
-
-public void setId(int id){
-    this.id = id;
-}
-
-public void setQuantidadeInstrucoes(int quantidadeInstrucoes){
-    this.quantidadeInstrucoes = quantidadeInstrucoes;
-}
-
-public Processo gerarProcesso(){
-    
+    public static Processo gerarProcesso() {
+        int id = ++contadorId;
+        int qtd = gerador.nextInt(41) + 10; // de 10 a 50
+        return new Processo(id, qtd);
+    }
 }
