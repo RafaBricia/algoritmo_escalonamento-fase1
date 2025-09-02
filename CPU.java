@@ -16,7 +16,7 @@ public class CPU {
             quantidadeCiclos++;
 
             try {
-                Thread.sleep(300); // simula tempo
+                Thread.sleep(300); // usa para simular o tempo de execução na CPU
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -24,6 +24,7 @@ public class CPU {
             if (quantidadeCiclos % limiteInterrupcao == 0) {
                 System.out.println(">>> Interrupção de clock <<<");
             }
+            
         }
 
         System.out.println("Todos os processos foram finalizados!");

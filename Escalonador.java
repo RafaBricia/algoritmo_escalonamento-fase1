@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+// Responsável por gerenciar a fila de processos e 
+// decidir qual processo será executado com base no algoritmo de escalonamento definido.
+
 public class Escalonador {
     private ArrayList<Processo> filaDeProntos = new ArrayList<>();
     private String algoritmo;
@@ -13,9 +16,14 @@ public class Escalonador {
     public void setAlgoritmo(String algoritmo) {
         this.algoritmo = algoritmo;
     }
-    
+
     public void adicionarProcesso(Processo p){
         filaDeProntos.add(p);
+    }
+    
+    public String removerProcesso(Processo p){
+        filaDeProntos.remove(p);
+        return "Processo " + p.getId() + " finalizado e removido da fila de prontos.";
     }
 
     public boolean temProcessos() {
@@ -47,7 +55,7 @@ public class Escalonador {
             resultado.append(p.cicloDeClock()).append("\n");
         }
         if (p.getQuantidadeInstrucoes() > 0) {
-            filaDeProntos.add(p); // volta para o fim da fila
+            filaDeProntos.add(p);
         } else {
             resultado.append(removerProcesso(p)).append("\n");
         }
@@ -77,10 +85,5 @@ public class Escalonador {
         } else {
             return "Algoritmo de escalonamento inválido.";
         }
-    }
-
-    public String removerProcesso(Processo p){
-        filaDeProntos.remove(p);
-        return "Processo " + p.getId() + " finalizado e removido da fila de prontos.";
     }
 }

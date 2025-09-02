@@ -1,12 +1,10 @@
 public class Main {
     public static void main(String[] args) {
 
-        // Cria processos
         Processo p1 = GeradorDeProcesso.gerarProcesso();
         Processo p2 = GeradorDeProcesso.gerarProcesso();
         Processo p3 = GeradorDeProcesso.gerarProcesso();
 
-        // Cria escalonador único
         Escalonador escalonador = new Escalonador("RR", 3);
         escalonador.adicionarProcesso(p1);
         escalonador.adicionarProcesso(p2);
